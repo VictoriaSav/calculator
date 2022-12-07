@@ -8,17 +8,38 @@
   </head>
   <body>
     <h1>Calculator</h1>
-    <!-- поле ввода 1-->
     <input id="num1" />
-    <div id="operator_btn">
-      <button id="plus" onclick="op='+'">+</button>
-      <button id="minus" onclick="op='-'">-</button>
-      <button id="times" onclick="op='*'">*</button>
-      <button id="divide" onclick="op='/'">/</button>
-    </div>
-    <!-- поле ввода 2-->
-    <input id="num2" />
+    <button id="plus" onclick="op='+'">+</button>
+    <button id="minus" onclick="op='-'">-</button>
+    <button id="times" onclick="op='*'">*</button>
+    <button id="divide" onclick="op='/'">/</button>
 
-    <button>посчитать</button>
+    <input id="num2" />
+    <button onclick="func()">равняется...</button>
+    <p id="result"></p>
+
+    <script>
+      function func() {
+        var result;
+        var num1 = Number(document.getElementById("num1").value);
+        var num2 = Number(document.getElementById("num2").value);
+
+        switch (op) {
+          case "+":
+            result = num1 + num2;
+            break; //прерывает цикл операции
+          case "-":
+            result = num1 - num2;
+            break;
+          case "*":
+            result = num1 * num2;
+            break;
+          case "/":
+            result = num1 / num2;
+            break;
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
   </body>
 </html>
